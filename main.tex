@@ -1,0 +1,85 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{Assignment 13: Papoulis Chapter 11 }
+\author{Dhatri Reddy}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+\usepackage{amsmath}
+\usepackage{romannum}
+\usepackage{enumitem}
+\setbeamertemplate{caption}[numbered]{}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+\logo{}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}{Problem 11.4}
+    The process x\brak{t} is WSS and 
+    $y''\brak{t} + 3y'\brak{t} + 2y\brak{t} = x\brak{t}$
+    Show that
+    \begin{enumerate}[label=(\alph*)]
+    \item $R''_{yx}\brak{\tau} + 3R'_{yx}\brak{\tau} + 2R_{yx}\brak{\tau} = R_{xx}\brak{\tau} $\\
+    $R''_{yy}\brak{\tau} + 3R'_{yy}\brak{\tau} + 2R_{yy}\brak{\tau} = R_{xy}\brak{\tau} $ all $\tau$
+    \item If $R_{yx}\brak{\tau} = q\delta\brak{\tau}$, then $R_{yx}\brak{\tau} = 0$ for $\tau < 0$ and for $\tau > 0$:\\
+    $R''_{yx}\brak{\tau} + 3R'_{yx}\brak{\tau} + 2R_{yx}\brak{\tau} = 0 $  $R_{yx}\brak{0} = 0$  $R'_{yx}\brak{0^{+}} = q$ \\
+    $R''_{yy}\brak{\tau} + 3R'_{yy}\brak{\tau} + 2R_{yy}\brak{\tau} = 0 $  $R_{yy}\brak{0} = \frac{q}{12}$ $R'_{yy}\brak{0} = 0$
+    \end{enumerate}
+\end{block}
+\end{frame}
+
+\section{Solving a}
+\begin{frame}
+\frametitle{Solving a}
+By multiplying both sides of the equation given in question by x\brak{t-\tau} and y\brak{t+\tau} we can conclude that\\
+$R''_{yx}\brak{\tau} + 3R'_{yx}\brak{\tau} + 2R_{yx}\brak{\tau} = R_{xx}\brak{\tau} $\\
+$R''_{yy}\brak{\tau} + 3R'_{yy}\brak{\tau} + 2R_{yy}\brak{\tau} = R_{xy}\brak{\tau} $
+
+\end{frame}
+
+\section{Solving b}
+\begin{frame}
+\frametitle{Solving b}
+
+From \brak{a} it follows that 
+$R''_{yx}\brak{\tau} + 3R'_{yx}\brak{\tau} + 2R_{yx}\brak{\tau} = q\delta\brak{\tau}$\\
+Since $R_{xx}\brak{\tau} = 0$ for $\tau < 0$, the above shows that 
+$R_{yx}\brak{\tau} = 0$ for $\tau < 0^{-}$ $R'_{yx}\brak{0^{-}} = 0$
+
+\begin{align}
+    S_{yx}\brak{s} = \frac{q}{s^{2} + 3s + 2}\\
+R_{yx}\brak{0^{+}} = \lim\limits_{s \to \infty} s S_{yx}\brak{s} = q\\
+R'_{yx}\brak{0^{+}} = \lim\limits_{s \to \infty} s^{2} S_{yx}\brak{s} = 0
+\end{align}
+
+$R''_{yy}\brak{\tau} + 3R'_{yy}\brak{\tau} + 2R_{yy}\brak{\tau} = R_{xy}\brak{\tau} = R_{xy}\brak{-\tau} = 0$ for $\tau > 0$
+
+\end{frame}
+
+\section{Solving b}
+\begin{frame}
+\frametitle{Solving b}
+\begin{align}
+    S_{yy}\brak{s} = \frac{q}{\brak{s^{2}+ 3s + 2}\brak{s^{2} - 3s + 2}}\\
+    = \frac{\frac{qs}{12} + \frac{q}{4}}{s^{2} + 3s + 2} + \frac{-\frac{qs}{12} + \frac{q}{4}}{s^{2} - 3s + 2}\\
+    S^{+}_{yy}\brak{s} = \frac{\frac{qs}{12} + \frac{q}{4}}{s^{2} + 3s + 2}\\
+    R^{+}_{yy}\brak{0^{+}} = R_{yy}\brak{0} = \lim\limits_{s \to \infty} s^{2} S^{+}_{yy}\brak{s} =  \frac{q}{12}\\
+    R'_{yy}\brak{0} = \lim\limits_{s \to \infty} s \brak{s S^{+}_{yy}\brak{s} - \frac{q}{12}} = 0 
+\end{align}
+\end{frame}
+\end{document}
